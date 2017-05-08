@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/iconfont.eot?t=1492488774902'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1492488774902#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1492488774902') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1492488774902') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1492488774902#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+// 类名开头与指定
+[class^="icon-"], [class*=" icon-"] {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shangjia::before { content: "\e604"; }
+
+.icon-canyin::before { content: "\e644"; }
+
+.icon-zhusu::before { content: "\e646"; }
+
+.icon-feiji::before { content: "\e655"; }
+
+.icon-shezhi::before { content: "\e68f"; }
+
+.icon-sousuo::before { content: "\e693"; }
+
+.icon-shouyefill::before { content: "\e6ca"; }
+
+.icon-shouye::before { content: "\e6cb"; }
+
+.icon-king::before { content: "\e619"; }
+
+.icon-iconfontxiala::before { content: "\e610"; }

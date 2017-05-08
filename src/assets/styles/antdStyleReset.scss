@@ -1,0 +1,11 @@
+/*
+💚 description: 针对antd UI的样式重置及样式bug解决
+💚 author: dylan
+💚 update: 05/05/2017 (dylan)
+*/
+
+
+// 走马灯滚动条
+.ant-layout-content {
+  overflow: hidden;
+}

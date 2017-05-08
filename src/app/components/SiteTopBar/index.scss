@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+@import "../../../assets/styles/colors";
+
+
+/*💚
+* 公共部分
+--------------------------------------------------*/
+
+.drop-arrow {
+  vertical-align: middle;
+}
+
+.stb-item {
+  float: left;
+
+  &:last-child > a::after {
+    display: none;
+  }
+}
+
+.item-title {
+  color: $siteTopBar-link;
+  font-size: 12px;
+  line-height: 36px;
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+
+  &::after {
+    $h: 16px;
+
+    content: '';
+    border-right: 1px solid $siteTopBar-border;
+    width: 0;
+    height: $h;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: calc((100% - #{$h}) / 2);
+  }
+}
+
+a.item-title:hover {
+  text-decoration: none;
+}
+
+.siteTopBar {
+  background: $siteTopBar-bg;
+  border-bottom: 1px solid $siteTopBar-border;
+  height: 36px;
+}
+
+/*💚
+* siteTopBar left
+--------------------------------------------------*/
+
+.stb-left {
+}
+
+/*💚
+* SiteTopBar right
+--------------------------------------------------*/
+
+.stb-right {
+}
+
+.stb-list {
+  display: flex;
+  justify-content: flex-end;
+}

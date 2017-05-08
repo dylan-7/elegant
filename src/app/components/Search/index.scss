@@ -1,0 +1,53 @@
+@import "../../../assets/styles/colors";
+
+
+.searcher {
+  background: $search-bg;
+  display: inline-block;
+  float: right;
+}
+
+.searchInput,
+.searchBtn {
+  border: 1px solid $search-border;
+  height: 40px;
+  line-height: 40px;
+  background: $search-bg;
+  float: left;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchInput {
+  width: 24em;
+  padding: {
+    top: 10px;
+    right: 40px;
+    bottom: 10px;
+    left: 16px;
+  };
+  color: $search--input;
+  font-size: 14px;
+  border-radius: 0;
+
+  &:focus,
+  &:hover {
+    z-index: 1;
+  }
+}
+
+.searchBtn {
+  width: 40px;
+  border-radius: 0;
+  margin-left: -1px;
+  // vertical-align: middle;
+  // cursor: pointer;
+  //
+  // &:hover {
+  //   background-color: $search__btn-bg--hover;
+  //   border-color: $search__btn-border--hover;
+  //   color: $search__btn-color--hover;
+  // }
+}

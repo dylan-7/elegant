@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+/*
+💚 description: 颜色单独配置，方便控制全网配色
+💚 author: dylan
+💚 update: 05/07/2017 (dylan)
+*/
+
+
+/*💚
+* 初始颜色，仅在当前引用
+--------------------------------------------------*/
+
+// 无色系等级
+$black:         #000 !default;
+$gray-darker:   #292b2c !default;
+$gray-dark:     #333 !default;
+$gray:          #464a4c !default;
+$gray-light:    #636c72 !default;
+$gray-lighter:  #eceeef !default;
+$gray-lightest: #f7f7f9 !default;
+$white:         #fff !default;
+
+
+// 皮肤颜色
+$theme-basic:      $gray-dark !default;
+$theme-primary:    #fc378c !default;
+$theme-secondary:  #fe3475 !default;
+// -- 状态类
+$theme-success:    #5cb85c !default;
+$theme-warning:    #ffd500 !default;
+$theme-danger:     #d9534f !default;
+$theme-info:       #5bc0de !default;
+$theme-inverse:    $gray-darker !default;
+
+
+/*💚
+* 指定颜色，外部引用的变量
+--------------------------------------------------*/
+
+// body背景色
+$body-bg: $white !default;
+// 默认文字颜色
+$body-color: $gray-dark !default;
+// 选中内容背景
+$selection-bg: #5EA7FE;
+// 选中内容文字
+$selection-color: $white;
+
+// placeholder
+$placeholder-color: #757575;
+
+// 主要颜色
+$primary-color: $theme-primary;
+// 次要颜色
+// ...
+
+// 导航
+$nav-bg: #313137;
+$nav__link: $white;
+$nav__link--hover: #080809;
+
+// 网站顶部功能条
+$siteTopBar-bg: #fafafa;
+$siteTopBar-border: #dfdfdf;
+$siteTopBar-link: #8c8c8c;
+
+// 头部
+$header-bg: $white;
+
+// 帮助区块
+$helper-bg: #fafafa;
+$helper-border: #dfdfdf;
+$helper-link: #6d6d6d;
+
+// Layout
+$main-bg: transparent;
+
+// Logo
+$logo--shadow: rgba(black, .3);
+
+// 头部搜索框
+$search-bg: $white;
+$search-border: #dfdfdf;
+$search__input: #bbb;
+$search__btn-bg--hover: #ff4883;
+$search__btn-border--hover: #ff4883;
+$search__btn-color--hover: #ff4883;
+
+// 边框
+// $border-color: #ddd;
+
+// 链接（link）
+$link--link: #333;
+// 链接（visited）
+$link--visited: currentColor;
+// 链接（hover）
+$link--hover: $theme-secondary;
+// 链接（active）
+$link--active: currentColor;
+
+// 按钮
+$btn-bg: $white;
+$btn-color: #666;
+$btn-border-color: #ddd;
+$btn-hover-bg: #ddd;
+
+// 输入框
+$input-border: #ddd;
+$input--outline: $primary-color;
+
+// 弹层
+$dialog-mask-bg: rgba(black, .1);
+$dialog-bg: $white;
+$dialog-border-color: #ddd;
+// $dialog-close: ;
+$dialog--shadow: rgba(black, .2);
+
+// 单选
+
+// 复选
+
+// 面板

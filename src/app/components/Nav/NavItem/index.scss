@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "../../../../assets/styles/colors";
+
+
+.navLink {
+  width: 100%;
+  min-width: 0.86em;
+  font: 18px/44px "microsoft yahei";
+  color: $nav__link !important;
+  text-align: center;
+  padding: 0 10px;
+
+  &:hover {
+    background-color: $nav__link--hover;
+    text-decoration: none;
+  }
+}
+
+i.navItem-icon {
+  font-size: 22px;
+  margin-right: 4px;
+}
+
+// 选中
+.active {
+  color: $nav__link;
+  background-color: $nav__link--hover;
+}

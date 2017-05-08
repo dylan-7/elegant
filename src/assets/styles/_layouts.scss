@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/*
+💚 description: 布局类
+💚 author: dylan
+💚 update: 05/06/2017 (dylan)
+*/
+
+
+
+/*💚
+* 子元素排版类
+--------------------------------------------------*/
+
+.hor,
+.hor-center,
+.ver-center {
+  display: flex;
+  flex-direction: row;
+}
+
+// 子元素row模式换行
+.hor {
+  flex-wrap: wrap;
+}
+
+// 子元素row模式不换行水平居中
+.hor-center {
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+// 子元素row模式不换行垂直居中
+.ver-center {
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.center-center,
+.center-center-column {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+// 子元素row模式水平垂直居中
+.center-center {
+  flex-direction: row;
+}
+
+// 子元素column模式水平垂直居中
+.center-center-column {
+  flex-direction: column;
+}
+
+// 两端对齐(flex)
+.space-between {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/*💚
+* 传统布局
+--------------------------------------------------*/
+
+// 双飞翼
+//
+
+// 圣杯
+//
+
+
+// 定位
+//
+
+
+// 浮动
+//
+
+
+// 掉换顺序右浮动
+//

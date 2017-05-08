@@ -1,0 +1,43 @@
+@import "../../../assets/styles/colors";
+
+
+.helper {
+  background: $helper-bg;
+  border: {
+    top: 1px solid;
+    bottom: 1px solid;
+    color: $helper-border;
+  }
+  padding: {
+    top: 5em;
+    bottom: 5em;
+  }
+  margin-top: 10.6em;
+  text-align: center;
+
+  &-item {
+    border-left: 1px solid $helper-border;
+    margin: 0 auto;
+
+    &:first-child {
+      border-left: 0 none;
+    }
+  }
+
+  .title,
+  .link {
+    color: $helper-link;
+  }
+
+  .title {
+    font-size: 18px;
+    margin-bottom: .8em;
+  }
+
+  .link,
+  .phone {
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: .4em;
+  }
+}

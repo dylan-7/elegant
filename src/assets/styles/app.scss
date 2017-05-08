@@ -1,0 +1,421 @@
+@charset "utf-8";
+
+/*
+💚 description: 根据项目制定的通用样式
+💚 author: dylan
+💚 update: 05/06/2017 (dylan)
+*/
+
+
+// _fonts、_layout是为了分类管理但又不让它生成单独文件
+@import "./mixins", "./colors", "./variables", "./fonts", "./layouts";
+
+
+/*💚
+* 全局设置
+--------------------------------------------------*/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, input, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  // border: none;
+  // font-size: inherit;
+  // color: currentColor;
+  // vertical-align: baseline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  font-size: 100%;
+}
+
+button, input, select, textarea {
+  font-size: 100%;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+em, strong {
+  font-style: normal;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+input, textarea {
+  padding: 6px 8px;
+  outline: none;
+  border: 1px solid $input-border;
+  vertical-align: middle;
+}
+
+// 水平垂直居中的弹层（默认：隐藏）
+dialog {
+  display: none;
+  border: 1px solid $dialog-border-color;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 51;
+  color: currentColor;
+  width: 500px;
+  padding: 10px;
+  margin: 0;
+  background: $dialog-bg;
+  transform: translate(-50%, -50%);
+  transition: .3s;
+}
+
+// WebKit, Blink, Edge
+::-webkit-input-placeholder {
+  color: $placeholder-color;
+}
+// Mozilla Firefox 19+
+::-moz-placeholder {
+  color: $placeholder-color;
+  opacity: 1;
+}
+// IE 10~11
+:-ms-input-placeholder {
+  color: $placeholder-color;
+}
+
+::selection {
+  background: $selection-bg;
+  color: $selection-color;
+}
+
+// 去IE input叉号/眼睛
+::-ms-clear,
+::-ms-reveal {
+  display: none;
+}
+
+// 去掉数字类型的箭头
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  // -webkit-appearance: none;
+}
+input[type="number"] {
+  // -moz-appearance: textfield;
+}
+
+// 全局盒子模型设置
+* {
+  // box-sizing: $box-model;
+  //
+  // &::before, &::after {
+  //   box-sizing: $box-model;
+  // }
+}
+
+html, body {
+  overflow-x: hidden;
+  height: 100%;
+  // 移动端点击链接覆盖显示的高亮颜色
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font: 12px/1.5 $font-family-zh-pc;
+  color: $body-color;
+  background-color: $body-bg;
+  -webkit-font-smoothing: antialiased;
+  // MB端
+  // font-size: 0.24rem;
+}
+
+// 链接（L-V-H-A）
+a {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  color: $link--link;
+
+  &:visited {}
+  &:hover {
+    text-decoration: underline;
+    color: $link--hover;
+  }
+  &:active {}
+}
+
+.border-bottom {
+  // border-bottom: 1px solid #e9e9e9;
+}
+
+// 块级属性
+.block {
+  display: block;
+}
+// 显示
+.show {
+  display: inherit;
+}
+// 隐藏
+.hide {
+  display: none;
+}
+
+// 弹出框背景（默认：隐藏）
+.dialog-mask {
+  @include dialog-mask($dialog-mask-bg);
+}
+
+// 固定定位在底部
+.fixed-bottom {
+  position: fixed;
+  z-index: 99;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+// last-no-border
+.last-no-border:last-child {
+  border: none;
+}
+
+// 图片设置
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// 容器里图片水平垂直居中
+.img-center-center {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+// 这里主要解决antd-mobile的组件carousel不能等比缩放
+.home-swipe {
+  height: 40.625vw;
+  max-height: 406.25px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+// 文本对齐类
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+// 字符溢出隐藏
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 字符超出1行溢出隐藏
+.text-overflow-1 {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 1;
+  // -webkit-box-orient: vertical;
+}
+
+// 字符超出2行溢出隐藏
+.text-overflow-2 {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 2;
+  // -webkit-box-orient: vertical;
+}
+
+// 字符超出3行溢出隐藏
+.text-overflow-3 {
+  // overflow: hidden;
+  // text-overflow: ellipsis;
+  // display: -webkit-box;
+  // -webkit-line-clamp: 3;
+  // -webkit-box-orient: vertical;
+}
+
+// 清除浮动
+.clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// 浮动
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+
+// 定位
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.fixed {
+  position: fixed;
+}
+
+// 叠加
+$z-index: (10: $z-10, 50: $z-50, 100: $z-100, 150: $z-150, 200: $z-200, 250: $z-250, max: $z-max);
+@each $prop, $value in $z-index {
+  .z-#{$prop} {
+    z-index: $value;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.scroll-wrap {
+  // position: absolute;
+  // top: 0;
+  // bottom: 0;
+  // left: 0;
+}
+
+// 绝对定位水平垂直居中
+.absolute-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+// button
+.btn-default {
+  background: $btn-bg;
+  color: $btn-color;
+  border: 1px solid $btn-border-color;
+  padding: 6px 6px;
+  border-radius: 3px;
+  transition: .3s;
+
+  &:hover {
+    background: $btn-hover-bg;
+  }
+}
+
+// .btn-primary {}
+
+// input（高度22~30像素）
+$input-size: (xs: 10px, sm: 12px, md: 14px, lg: 16px);
+@each $prop, $value in $input-size {
+  .input-#{$prop} {
+    height: $value;
+  }
+}
+
+// 为了突出而标上颜色
+.primary-color {
+  color: $primary-color;
+}
+
+
+// flex
+// 任何一个容器都可以指定 flex 布局
+// .box-example { display: flex }
+// 行内元素也可以使用 flex 布局
+// .box-example { display: inline-flex; }
+
+// 以下6个属性设置在容器上
+
+// 1. flex-direction --> 子项目排列的方向
+// row 默认，水平从左到右
+// row-reverse 水平从右到左
+// column 从上到下
+// column-reverse 从下到上
+
+// 2. flex-wrap 默认情况下，子项目都排在一条线上，而此属性解决的是，如果一条线排不下，子项目如何换行
+// nowrap 默认，不换行
+// wrap 换行，第一行在上方
+// wrap-reverse 换行，第一行在下方
+
+// 3. flex-flow 是 flex-direction 和 flex-wrap 的简写形式，默认值为 row nowrap
+
+// 4. justify-content 定义了子项目在主轴上的对齐方式
+// flex-start 默认值，左对齐
+// flex-end 右对齐
+// center 居中
+// space-between 两端对齐，子项目之间的间隔相等
+// space-around 每个子项目两侧的间隔相等。所以，子项目之间的间隔比子项目与父容器边界的间隔大一倍
+
+// 5. align-items 定义子项目在交叉轴上如何对齐。
+// flex-start 交叉轴的起点对齐
+// flex-end 交叉轴的终点对齐
+// center 交叉轴的中点对齐
+// baseline 子项目的第一行文字的基线对齐
+// stretch 默认值，如果子项目未设置高度或设为auto,将占满整个容器的高度
+
+// 6. align-content 定义了多根轴线的对齐方式，如果子项目只有一根轴线，则该属性无效。
+// flex-start 与交叉轴的起点对齐。
+// flex-end 与交叉轴的终点对齐
+// center 与交叉轴的中点对齐
+// space-between 与交叉轴两端对齐，轴线之间的间隔平均分布。
+// space-around 每根轴线两侧的间隔都相等，所以轴线之间的间隔比轴线与边框的间隔大一倍
+// stretch 默认值，轴线占满整个交叉轴
+
+// 以下6个属性设置在子项目上。
+
+// 1. order 定义子项目的排列顺序，数值越小，排位越靠前。默认值为0.
+
+// 2. flex-grow 定义子项目放大比例，默认为0，即如果存在剩余空间，也不放大。
+// 如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。
+// 如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍
+
+// 3. flex-shrink 定义了子项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+// 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。
+// 如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+
+// 4. flex-basis 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。
+// 浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。
+// 它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+
+// 5. flex 该属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+// 该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)
+// 建议优先使用这个 flex 属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。
+
+// align-self 允许单个项目有与其他项目不一样的对齐方式，可覆盖 align-items 属性。
+// 默认值为 auto，表示继承父元素的 align-items 属性，如果没有父元素，则等同于 stretch
+// 该属性可能取6个值，除了 auto ,其他都与 align-items 属性完全一致。

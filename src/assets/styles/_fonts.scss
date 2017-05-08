@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+/*
+💚 description: 字体尺寸
+💚 author: dylan
+💚 update: 05/06/2017 (dylan)
+*/
+
+
+
+/*💚
+* MB端
+--------------------------------------------------*/
+// 请保证你的设计稿为750px宽，如果有其余字体大小，请在私有样式中设置
+// .font-20 {font-size: 0.2rem;}
+//
+// .font-24 {font-size: 0.24rem;}
+//
+// .font-26 {font-size: 0.26rem;}
+//
+// .font-28 {font-size: 0.28rem;}
+//
+// .font-30 {font-size: 0.3rem;}
+//
+// .font-32 {font-size: 0.32rem;}
+//
+// .font-34 {font-size: 0.34rem;}
+//
+// .font-36 {font-size: 0.36rem;}
+//
+// .font-38 {font-size: 0.38rem;}
+//
+// .font-40 {font-size: 0.4rem;}
+
+
+/*💚
+* PC端
+--------------------------------------------------*/
+
+$font-size: (20: 20px, 24: 24px, 26: 26px, 28: 28px, 30: 30, 32: 32px, 34: 34px, 36: 36px, 38: 38px, 40: 40px);
+@each $prop, $value in $font-size {
+  .f#{$prop} {
+    font-size: $value;
+  }
+}

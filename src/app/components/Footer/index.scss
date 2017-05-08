@@ -1,0 +1,17 @@
+.footer {
+  margin-top: 3.6em;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &-siteInfo {
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.register {
+  text-align: center;
+  font-size: 12px;
+}

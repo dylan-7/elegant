@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+/*
+💚 description: 全局变量
+💚 author: dylan
+💚 update: 05/06/2017 (dylan)
+*/
+
+
+
+/*💚
+* 字体
+--------------------------------------------------*/
+
+// mobile端
+$font-family-zh-mb: 'Helvetica Neue', Helvetica, 'PingFang SC', ‘Hiragino Sans GB’, 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+$font-family-en-mb: Arial, sans-serif !default;
+
+// PC端
+$font-family-zh-pc:  tahoma, Arial, '\5FAE\8F6F\96C5\9ED1', '\5b8b\4f53';
+$font-family-en-pc: tahoma, Arial, 'Hiragino Sans GB', sans-serif;
+
+
+/*💚
+* 网格断点
+--------------------------------------------------*/
+
+$grid-breakpoints: (
+  // xs: 0,
+  // sm: 576px,
+  // md: 768px,
+  // lg: 992px,
+  // xl: 1200px
+) !default;
+
+
+/*💚
+* 其它
+--------------------------------------------------*/
+
+// 盒子模型
+$box-model: border-box !default;
+
+// 叠加顺序
+$z-10: 10;
+$z-50: 50;
+$z-100: 100;
+$z-150: 150;
+$z-200: 200;
+$z-250: 250;
+$z-max: 999999; //为了应对某些插件z-index值过高的问题

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*
+💚 description: mixins只适合传递参数快速创建样式的情形，否则跟复制、粘贴没什么两样，会生成许多重复代码，因此与%placeholder配合使用，%placeholder会合并共用样式
+💚 author: dylan
+💚 update: 05/06/2017 (dylan)
+*/
+
+
+
+%btn {
+  padding: 4px 6px;
+  border: 1px solid #ddd;
+  width: auto;
+  cursor: pointer;
+  text-align: center;
+}
+
+@mixin btn(
+  $color: currentColor,
+  $background-color: transparent,
+  $border-radius: 3px
+) {
+  @extend %btn;
+  color: $color;
+  background-color: $background-color;
+  border-radius: $border-radius;
+}
+
+
+// 弹出框背景
+%dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 50;
+}
+
+@mixin dialog-mask($bg) {
+  @extend %dialog;
+  // 传入0~1之间的alpha值
+  background: $bg;
+}
