@@ -26,7 +26,7 @@ export default class Brand extends Component {
         <Nav />
         <Content>
           <Row>
-          hello
+          精选品牌
           </Row>
         </Content>
         <Footer />

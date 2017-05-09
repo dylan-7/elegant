@@ -21,6 +21,7 @@ export default class TakeOut extends Component {
         </Header>
         <Nav />
         <Content>
+        外卖
         </Content>
         <Footer />
       </div>

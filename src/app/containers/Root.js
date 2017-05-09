@@ -13,11 +13,6 @@ import 'styles/app.scss'
 import 'styles/iconfont.scss'
 import 'styles/antdStyleReset.scss'
 // import 'styles/animations.scss'
-import {
-  Home,
-  TakeOut,
-  NotFoundPage
-} from '../containers'
 
 
 // const Root = ({ store, history }) => (

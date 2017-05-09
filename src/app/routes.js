@@ -31,7 +31,7 @@ export default (
       <Route exact path="/" component={Home} />
       <Route path="/take-out" component={TakeOut} />
       <Route path="/brand" component={Brand} />
-      <Route paht="/sign-up" component={SignUp} />
+      <Route path="/sign-up" component={SignUp} />
       <Route component={NoMatch} />
     </Switch>
   </div>

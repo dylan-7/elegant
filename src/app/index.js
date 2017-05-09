@@ -12,47 +12,58 @@ import { AppContainer } from 'react-hot-loader'
 import { browserHistory } from 'react-router-dom'
 import Root from './containers/Root'
 
-const RedBox = require('redbox-react').default
 const rootElement = document.getElementById('wrapper')
 
-try {
+if(__DEV__) {
+  const RedBox = require('redbox-react').default
+
+  try {
+    ReactDOM.render(
+      <AppContainer>
+      <Root history={browserHistory} />
+      </AppContainer>,
+      rootElement
+    )
+  } catch(e) {
+    ReactDOM.render(
+      <RedBox error={e}>
+      <AppContainer>
+      <Root history={browserHistory} />
+      </AppContainer>
+      </RedBox>,
+      rootElement
+    )
+  }
+
+  if(module.hot) {
+    module.hot.accept('./containers/Root', () => {
+      const NewApp = require('./containers/Root').default
+
+      try {
+        ReactDOM.render(
+          <AppContainer>
+            <NewApp history={browserHistory} />
+          </AppContainer>,
+          rootElement
+        )
+      } catch(e) {
+        ReactDOM.render(
+          <RedBox error={e}>
+            <AppContainer>
+              <NewApp history={browserHistory} />
+            </AppContainer>
+          </RedBox>,
+          rootElement
+        )
+      }
+    })
+  }
+
+} else {
   ReactDOM.render(
     <AppContainer>
-      <Root history={browserHistory} />
+    <Root history={browserHistory} />
     </AppContainer>,
     rootElement
   )
-} catch(e) {
-  ReactDOM.render(
-    <RedBox error={e}>
-      <AppContainer>
-        <Root history={browserHistory} />
-      </AppContainer>
-    </RedBox>,
-    rootElement
-  )
-}
-
-if(module.hot) {
-  module.hot.accept('./containers/Root', () => {
-    const NewApp = require('./containers/Root').default
-
-    try {
-      ReactDOM.render(
-        <AppContainer>
-          <NewApp history={browserHistory} />
-        </AppContainer>,
-        rootElement
-      )
-    } catch(e) {
-      ReactDOM.render(
-        <RedBox error={e}>
-          <AppContainer>
-            <NewApp history={browserHistory} />
-          </AppContainer>
-        </RedBox>,
-        rootElement
-      )
-    }
-  })
 }
