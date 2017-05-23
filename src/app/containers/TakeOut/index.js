@@ -1,12 +1,6 @@
 import React, { Component } from 'react'
 import {
-  SiteTopBar,
-  Nav,
-  Header,
-  Logo,
-  Footer,
-  Layout,
-  Content
+  Todos
 } from 'app/components'
 
 export default class TakeOut extends Component {
@@ -21,7 +15,7 @@ export default class TakeOut extends Component {
         </Header>
         <Nav />
         <Content>
-        外卖
+          <Todos />
         </Content>
         <Footer />
       </div>

@@ -7,9 +7,13 @@ project/
   src/
     app/
       components/
-        ...
       index.js
       routes.js
+      containers/
+      actions/
+      reducers/
+      store/
+      sagas/
     assets/
       fonts/
       styles/
@@ -23,6 +27,7 @@ project/
   tools/
     postcss.config.js
     server.js
+    serverDist.js
   package.json
   webpack.dev.config.js
   weebpack.prod.config.js
@@ -65,3 +70,15 @@ project/
 
 
 ### 组件
+
+components 文件夹为纯UI组件，一个元素，一个功能模块都属于展示组件。
+
+* 属于同一个模块的组件放在一个文件夹
+
+* 提取通用的子组件到顶级
+
+* 网站功能模块的UI内容
+
+### 容器
+
+containers 网站功能模块与数据的交互

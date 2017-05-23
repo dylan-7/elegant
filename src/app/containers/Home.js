@@ -17,36 +17,6 @@ import img2 from 'images/banner/img_2.jpg'
 import img3 from 'images/banner/img_3.jpg'
 
 
-//import { Nav, Timer } from 'app/components'
-// import { bindActionCreators } from 'redux'
-// import { connect } from 'react-redux'
-//import * as TimerActions from 'app/actions/TimerActions'
-
-// class Home extends Component {
-// 	render() {
-// 		const { state, actions } = this.props
-// 		return (
-//       <div className="box">
-//         //<Timer {...state} {...actions} />
-//         //<Nav/>
-//       </div>
-// 		)
-// 	}
-// }
-//
-// const mapStateToProps = state => ({
-// 	state: state.timer
-// })
-//
-// const mapDispatchToProps = dispatch => ({
-// 	actions: bindActionCreators(TimerActions, dispatch)
-// })
-//
-// export default connect(
-// 	mapStateToProps,
-// 	mapDispatchToProps
-// )(Home)
-
 export default class Home extends Component {
   render() {
     document.title = '乐享生活-高品质团购，省钱不剁手！'

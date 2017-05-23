@@ -1,14 +1,8 @@
-## Elegant
-
-名称灵感来自非常美、气质、飘逸的中国风
-
-
-
-### Target
+## Target
 
 > 使用React技术栈开发SPA
 
-### Tech Stack
+## Tech Stack
 
 * UI库：React & React-Dom
 
@@ -32,17 +26,11 @@
 
 * 数据模拟：MockJS
 
-* 数据处理：Lodash
-
 * 打包构建：Babel/Webpack
 
 * 包管理：Yarn
 
-* 本地环境：NodeJs
-
-* 本地服务器：Express
-
-### Features
+## Features
 
 * 自主配置开发环境
 
@@ -62,12 +50,12 @@
 
 * PC/Mobile同步展示
 
-### Usage
+## Usage
 
 > 1、安装依赖：`$ yarn` <br/>
 2、启动服务：`$ yarn start` <br />
 3、生成文件：`$ yarn build`
 
-### Articles
+## Articles
 
 * [React编码规范](https://zhuanlan.zhihu.com/p/20616464?refer=FrontendMagazine)

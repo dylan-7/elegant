@@ -1,5 +1,5 @@
 /*
-💚 description: 入口文件
+💚 description: 入口文件，顶级容器
 */
 
 'use strict'
@@ -11,8 +11,12 @@ import PropTypes from 'prop-types'
 import { AppContainer } from 'react-hot-loader'
 import { browserHistory } from 'react-router-dom'
 import Root from './containers/Root'
+import configureStore from './store/configureStore'
+import rootSage from './sagas'
 
 const rootElement = document.getElementById('wrapper')
+const store = configureStore(window.__INITIAL_STATE__)
+store.runSaga(rootSage)
 
 if(__DEV__) {
   const RedBox = require('redbox-react').default
@@ -20,16 +24,16 @@ if(__DEV__) {
   try {
     ReactDOM.render(
       <AppContainer>
-      <Root history={browserHistory} />
+        <Root store={store} history={browserHistory} />
       </AppContainer>,
       rootElement
     )
   } catch(e) {
     ReactDOM.render(
       <RedBox error={e}>
-      <AppContainer>
-      <Root history={browserHistory} />
-      </AppContainer>
+        <AppContainer>
+          <Root store={store} history={browserHistory} />
+        </AppContainer>
       </RedBox>,
       rootElement
     )
@@ -42,7 +46,7 @@ if(__DEV__) {
       try {
         ReactDOM.render(
           <AppContainer>
-            <NewApp history={browserHistory} />
+            <NewApp store={store} history={browserHistory} />
           </AppContainer>,
           rootElement
         )
@@ -50,7 +54,7 @@ if(__DEV__) {
         ReactDOM.render(
           <RedBox error={e}>
             <AppContainer>
-              <NewApp history={browserHistory} />
+              <NewApp store={store} history={browserHistory} />
             </AppContainer>
           </RedBox>,
           rootElement
@@ -62,7 +66,7 @@ if(__DEV__) {
 } else {
   ReactDOM.render(
     <AppContainer>
-    <Root history={browserHistory} />
+      <Root history={browserHistory} />
     </AppContainer>,
     rootElement
   )

@@ -3,7 +3,7 @@
 */
 
 import React, { Component } from 'react'
-// import { Provider } from 'react-redux'
+import { Provider } from 'react-redux'
 import { BrowserRouter as Router } from 'react-router-dom'
 import routes from 'app/routes.js'
 import 'moment/locale/zh-cn'
@@ -15,20 +15,10 @@ import 'styles/antdStyleReset.scss'
 // import 'styles/animations.scss'
 
 
-// const Root = ({ store, history }) => (
-//   <Provider store={store}>
-//     <Router history={history} routes={routes} />
-//   </Provider>
-// )
-
-export default class Root extends Component {
-  render () {
-    const { history } = this.props
-
-    return (
-      <Router history={history}>
-       {routes}
-      </Router>
-    )
-  }
+const Root = ({ store, history }) => {
+  <Provider store={store}>
+    <Router history={history} routes={routes} />
+  </Provider>
 }
+
+export default Root
